@@ -24,3 +24,10 @@ One of the simplest but perhaps most powerful features we had was the ability to
 The whole URL idea is explained in a blog post of 2007, [Using URLs to pass parameters to web applications, widgets and gadgets](http://internet-apps.blogspot.co.uk/2007/11/using-urls-to-pass-parameters-to-web.html).
 
 More Sidewinder ideas can be seen in [The 10 minute guide to Sidewinder (or 'How to turn a web app into a desktop app without programming')](http://markbirbeck.com/2008/01/14/10-minute-guide-to-sidewinder-or-to/)
+
+## Usage
+
+```shell
+npm install --dev
+electron .
+```
