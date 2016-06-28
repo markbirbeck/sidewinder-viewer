@@ -1,9 +1,73 @@
 const electron = require('electron');
+const URL = require('url');
 // Module to control application life.
 const {app} = electron;
 // Module to create native browser window.
 const {BrowserWindow} = electron;
 let browserWindowOptions = {width: 800, height: 600};
+
+/**
+ * Parse command-line parameters:
+ *
+ * What we're after is a URL to say what page to open, with an XPointer
+ * that provides metadata. For example:
+ *
+ *  electron . "http://inbox.google.com#meta(width=1000,height=800)"
+ */
+
+let opts = require('minimist')(process.argv.slice(2));
+let url = opts._[0];
+
+if (url) {
+
+  /**
+   * Parse the main parameter as a URL:
+   */
+
+  let urlObject = URL.parse(url);
+
+  /**
+   * If there is a 'hash' section of the URL then see if there is a
+   * 'meta' XPointer:
+   */
+
+  if (urlObject.hash) {
+    let match = urlObject.hash.match(/#meta\(([^\)]*)\)/);
+
+    if (match) {
+      let params = match[1].split(',');
+
+      params.forEach(param => {
+        let nvPair = param.split('=');
+        let value = nvPair[1];
+
+        if (value === undefined || value === 'true') {
+          value = true;
+        }
+
+        if (value === 'false') {
+          value = false;
+        }
+
+        if (isFinite(value) && !isNaN(parseFloat(value))) {
+          value = Number(value);
+        }
+
+        browserWindowOptions[nvPair[0]] = value;
+      });
+    }
+
+    /**
+     * Remove the hash before reconstructing the URL:
+     */
+
+    urlObject.hash = undefined;
+    url = URL.format(urlObject);
+  }
+} else {
+  console.error('Please provide a URL');
+  process.exit(-1);
+}
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -13,8 +77,8 @@ function createWindow() {
   // Create the browser window.
   win = new BrowserWindow(browserWindowOptions);
 
-  // and load the index.html of the app.
-  win.loadURL(`file://${__dirname}/index.html`);
+  // and load the url of the app.
+  win.loadURL(url);
 
   // Emitted when the window is closed.
   win.on('closed', () => {

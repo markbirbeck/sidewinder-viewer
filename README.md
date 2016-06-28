@@ -29,5 +29,7 @@ More Sidewinder ideas can be seen in [The 10 minute guide to Sidewinder (or 'How
 
 ```shell
 npm install --dev
-electron .
+electron . "http://inbox.google.com#meta(width=1000,height=800)"
 ```
+
+The possible options are those that are available when [creating a new `BrowserWindow()`](http://electron.atom.io/docs/api/browser-window/#new-browserwindowoptions).
