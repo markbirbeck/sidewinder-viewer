@@ -4,6 +4,7 @@ const URL = require('url');
 const {app} = electron;
 // Module to create native browser window.
 const {BrowserWindow} = electron;
+const {shell} = electron;
 let browserWindowOptions = {width: 800, height: 600};
 
 /**
@@ -86,6 +87,18 @@ function createWindow() {
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
     win = null;
+  });
+
+  /**
+   * If a new window is requested with a URL then open in the browser
+   * (better navigating links from emails):
+   *
+   * [TODO] Make opening links in a browser app configurable.
+   */
+
+  win.webContents.on('new-window', (ev, url, name) => {
+    ev.preventDefault();
+    shell.openExternal(url);
   });
 }
 // This method will be called when Electron has finished
