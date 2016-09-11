@@ -34,4 +34,15 @@ sidewinder "http://inbox.google.com#meta(width=1000,height=800)"
 
 The possible options are those that are available when [creating a new `BrowserWindow()`](http://electron.atom.io/docs/api/browser-window/#new-browserwindowoptions).
 
+To add a command `inbox` that can be run from the command-line, just add a function to `~/.bash_functions`:
+
+```shell
+function inbox
+{
+  sidewinder "http://inbox.google.com#meta(width=1000,height=800)"
+}
+```
+
+Typing `inbox` at the command-line will now launch Google Inbox in Electron, and size the Electron window accordingly.
+
 [1] Much of our XForms plugin was developed by [Paul Butcher](https://github.com/paul-butcher).
