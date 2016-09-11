@@ -1,5 +1,5 @@
-sidewinder
-==========
+sidewinder viewer
+=================
 
 A little trip down memory lane...
 
@@ -28,8 +28,8 @@ More Sidewinder ideas can be seen in [The 10 minute guide to Sidewinder (or 'How
 ## Usage
 
 ```shell
-npm install --dev
-electron . "http://inbox.google.com#meta(width=1000,height=800)"
+npm install -g sidewinder-viewer
+sidewinder "http://inbox.google.com#meta(width=1000,height=800)"
 ```
 
 The possible options are those that are available when [creating a new `BrowserWindow()`](http://electron.atom.io/docs/api/browser-window/#new-browserwindowoptions).

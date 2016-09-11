@@ -1,12 +1,14 @@
 {
-  "name": "sidewinder",
+  "name": "sidewinder-viewer",
   "version": "0.1.0",
   "description": "The Sidewinder Viewer",
   "main": "main.js",
-  "bin": "./bin/cli.js",
+  "bin": {
+    "sidewinder": "./bin/cli.js"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/markbirbeck/sidewinder.git"
+    "url": "git+https://github.com/markbirbeck/sidewinder-viewer.git"
   },
   "keywords": [
     "Electron",
@@ -17,9 +19,9 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "bugs": {
-    "url": "https://github.com/markbirbeck/sidewinder/issues"
+    "url": "https://github.com/markbirbeck/sidewinder-viewer/issues"
   },
-  "homepage": "https://github.com/markbirbeck/sidewinder#readme",
+  "homepage": "https://github.com/markbirbeck/sidewinder-viewer#readme",
   "dependencies": {
     "electron": "^1.3.5",
     "minimist": "^1.2.0"
