@@ -5,7 +5,7 @@ A little trip down memory lane...
 
 I wanted to use [Electron](http://electron.atom.io/) to run Google calendar, inbox, Trello and so on, so that I could close a few of those tabs in my browser! But I didn't want to create and maintain a separate _Electron_ app for each _web_ app, since that would quickly become unwieldy.
 
-So I decided to resurrect an old idea that myself and [Phil Booth](https://github.com/philbooth) worked on nearly 10 years ago. Back then we were building an application framework called Sidewinder that used W3C standards such as XForms and CSS to create desktop applications. It was pretty advanced and we were able to do some impressive things, but as often happens with these kinds of projects, you can sometimes be a little bit too early.
+So I decided to resurrect an old idea that myself and [Phil Booth](https://github.com/philbooth) worked on nearly 10 years ago. Back then we were building an application framework called Sidewinder that used W3C standards such as XForms[1] and CSS to create desktop applications. It was pretty advanced and we were able to do some impressive things, but as often happens with these kinds of projects, you can sometimes be a little bit too early.
 
 (See [Sidewinder and GCal desktop applications](http://internet-apps.blogspot.co.uk/2006/08/sidewinder-and-gcal-desktop.html) for a quick introduction to the kinds of things we were doing.)
 
@@ -33,3 +33,5 @@ electron . "http://inbox.google.com#meta(width=1000,height=800)"
 ```
 
 The possible options are those that are available when [creating a new `BrowserWindow()`](http://electron.atom.io/docs/api/browser-window/#new-browserwindowoptions).
+
+[1] Much of our XForms plugin was developed by [Paul Butcher](https://github.com/paul-butcher).
