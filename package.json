@@ -3,9 +3,7 @@
   "version": "0.1.0",
   "description": "The Sidewinder Viewer",
   "main": "main.js",
-  "scripts": {
-    "start": "markbirbeck ."
-  },
+  "bin": "./bin/cli.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/markbirbeck/sidewinder.git"
@@ -23,7 +21,7 @@
   },
   "homepage": "https://github.com/markbirbeck/sidewinder#readme",
   "dependencies": {
-    "electron": "^1.3.5"
+    "electron": "^1.3.5",
     "minimist": "^1.2.0"
   }
 }
