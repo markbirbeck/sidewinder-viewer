@@ -5,7 +5,13 @@ const {app} = electron;
 // Module to create native browser window.
 const {BrowserWindow} = electron;
 const {shell} = electron;
-let browserWindowOptions = {width: 800, height: 600};
+let browserWindowOptions = {
+    width: 800,
+    height: 600,
+    webPreferences: {
+        nodeIntegration: false
+    }
+};
 
 /**
  * Parse command-line parameters:
