@@ -25,10 +25,25 @@ The whole URL idea is explained in a blog post of 2007, [Using URLs to pass para
 
 More Sidewinder ideas can be seen in [The 10 minute guide to Sidewinder (or 'How to turn a web app into a desktop app without programming')](http://markbirbeck.com/2008/01/14/10-minute-guide-to-sidewinder-or-to/)
 
-## Usage
+## Installation
+
+To install globally:
 
 ```shell
 npm install -g sidewinder-viewer
+```
+
+## Upgrading
+
+To force an upgrade to the latest version:
+
+```shell
+npm install -g sidewinder-viewer@latest -g
+```
+
+## Usage
+
+```shell
 sidewinder "http://inbox.google.com#meta(width=1000,height=800)"
 ```
 
