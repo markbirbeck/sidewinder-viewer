@@ -10,10 +10,11 @@ const spawn = require('child_process').spawn;
  *  electron . http://inbox.google.com#meta(height=300)
  */
 
-let parent = path.resolve(__dirname, '..');
+const electron = require('electron');
+const parent = path.resolve(__dirname, '..');
 
 spawn(
-  path.resolve(parent, 'node_modules/.bin/electron'),
+  electron,
   [
     parent,
     ...process.argv.slice(2)
