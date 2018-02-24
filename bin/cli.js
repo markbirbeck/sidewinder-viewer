@@ -11,7 +11,7 @@ const spawn = require('child_process').spawn;
  */
 
 const electron = require('electron');
-let parent = path.resolve(__dirname, '..');
+const parent = path.resolve(__dirname, '..');
 
 spawn(
   electron,
