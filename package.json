@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/markbirbeck/sidewinder-viewer#readme",
   "dependencies": {
-    "electron": "10.1.1",
+    "electron": "10.2.0",
     "minimist": "^1.2.0"
   }
 }
